@@ -12,23 +12,6 @@ services:
     environment:
       - MONGO_SHARD=one
       - MONGO_URL=mongodb://10.128.0.2/apm
-  kadira-api:
-    build: ./kadira-api
-    ports:
-      - "10002:80"
-    environment:
-      - PORT=80
-      - MONGO_APP_URL=mongodb://10.128.0.2/apm
-      - MONGO_SHARD_URL_one=mongodb://10.128.0.2/apm
-      - MAIL_URL=smtp://user:pass@smtp.mailgun.org:587
-      - AUTH_SECRET=secret
-      - JWT_SECRET=secret
-      - JWT_LIFETIME=1d
-      - TRELLO_KEY=xxxxxxxxx
-      - TRELLO_RATE=xxxxxxxxx
-      - TRELLO_TOKEN=xxxxxxxxx
-      - TRELLO_ORG_ID=xxxxxxxxx
-      - TRELLO_MAIN_BOARD_ID=xxxxxxxxx
   kadira-ui:
     build: ./kadira-ui
     ports:
