@@ -16,16 +16,9 @@ services:
       - MONGO_URL=$KADIRA_MONGO_URL
 
   kadira-ui:
-    image: ulexus/meteor
+    build: ./kadira-ui
     ports:
       - "4000:4000"
     environment:
-      - PORT=4000
-      - ROOT_URL=http://localhost:4000
       - MONGO_URL=$KADIRA_MONGO_URL
       - MONGO_SHARD_URL_one=$KADIRA_MONGO_URL
-      - RELEASE=1.4.3.2
-      - BUNDLE_FILE=/home/meteor/build.tar.gz
-    volumes:
-      - ./kadira-ui/kadira-ui.tar.gz:/home/meteor/build.tar.gz
-

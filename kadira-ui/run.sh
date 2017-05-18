@@ -2,12 +2,9 @@
 
 #meteor build .
 
+docker build -t kadira-ui .
+
 docker run --rm -it \
-  -e ROOT_URL=http://localhost:4000 \
-  -e BUNDLE_FILE=/home/meteor/build.tar.gz \
-  -v `pwd`/kadira-ui.tar.gz:/home/meteor/build.tar.gz \
   -e MONGO_URL=$KADIRA_MONGO_URL \
-  -e RELEASE=1.4.3.2 \
   -p 4000:4000 \
-  -e PORT=4000 \
-  ulexus/meteor
+  kadira-ui
