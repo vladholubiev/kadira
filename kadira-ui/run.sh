@@ -7,7 +7,6 @@ docker run --rm -it \
   -e BUNDLE_FILE=/home/meteor/build.tar.gz \
   -v `pwd`/kadira-ui.tar.gz:/home/meteor/build.tar.gz \
   -e MONGO_URL=$KADIRA_MONGO_URL \
-  -e METEOR_SETTINGS="$(cat settings.json)" \
   -e RELEASE=1.4.3.2 \
   -p 4000:4000 \
   -e PORT=4000 \
