@@ -39,18 +39,4 @@ Only 1 environment variable needed! `KADIRA_MONGO_URL`
 1. Build Meteor - `cd kadira-ui && meteor build .`
 2. Start server - `docker-compose up`
 3. Navigate to `localhost:4000` - Kadira is ready. Engine is on port 11011
-4. Login as `admin@gmail.com` / `admin` (pass).
-
-```js
-const crypto = require("crypto");
-const bcrypt = require("bcrypt");
-
-function getEncryptedPassword(password) {
-  const hash = crypto.createHash('sha256');
-  hash.update(password);
-  const hashedPassword = hash.digest('hex');
-  return new Promise(resolve => bcrypt.hash(hashedPassword, 10, (e, r) => resolve(r)));
-}
-
-getEncryptedPassword('123456').then(console.log);
-```
+4. Login as `admin@gmail.com` / `admin` and change the password
