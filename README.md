@@ -39,34 +39,7 @@ Only 1 environment variable needed! `KADIRA_MONGO_URL`
 1. Build Meteor - `cd kadira-ui && meteor build .`
 2. Start server - `docker-compose up`
 3. Navigate to `localhost:4000` - Kadira is ready. Engine is on port 11011
-
-4. In order to login, create initial user. Just insert into Mongo, into `users` collection:
-
-```json
-{
-    "_id": "TeNH2Hh4YMGuiCzRT",
-    "createdAt": {
-        "$date": "2017-05-17T11:23:57.992+0000"
-    },
-    "services": {
-        "password": {
-            "bcrypt": "$2a$10$Dj3hiRVBTgo31JLqEsjTd.iILAO3GmMtKSj6XIGXRNwsi5jDw.aF."
-        }
-    },
-    "username": "SOMEUSER",
-    "emails": [{
-        "address": "user@gmail.com",
-        "verified": false
-    }],
-    "states": {
-        "__inited": 1.4950202511E12,
-        "activated": 1.495022453102E12
-    },
-    "plan": "business"
-}
-```
-
-This will set password `SOMEPASSWORD`. You can update it direcrly in mongo using this code:
+4. Login as `admin@gmail.com` / `admin` (pass).
 
 ```js
 const crypto = require("crypto");
