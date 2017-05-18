@@ -8,4 +8,8 @@ Meteor.startup(function() {
 
     console.log('CREATED ADMIN USER (admin@gmail.com/admin). CHANGE PASSWORD');
   }
+
+  Accounts.onCreateUser(function() {
+    throw new Error('Access Denied');
+  });
 });
